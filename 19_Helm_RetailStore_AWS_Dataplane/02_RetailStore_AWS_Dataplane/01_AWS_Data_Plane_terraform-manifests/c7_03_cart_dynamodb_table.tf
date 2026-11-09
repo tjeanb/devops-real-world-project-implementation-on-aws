@@ -31,9 +31,13 @@ resource "aws_dynamodb_table" "items_west2" {
 
   # Global Secondary Index for customer-based lookups
   global_secondary_index {
-    name               = "idx_global_customerId"
-    hash_key           = "customerId"
-    projection_type    = "ALL"
+    name            = "idx_global_customerId"
+    projection_type = "ALL"
+
+    key_schema {
+      attribute_name = "customerId"
+      key_type       = "HASH"
+    }
   }
 
   tags = {
