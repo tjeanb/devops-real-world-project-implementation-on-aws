@@ -2,8 +2,13 @@
 *.tfstate
 *.tfstate.backup
 .terraform/
-.terraform.lock.hcl
 crash.log
+
+# Terraform variable files containing secrets
+*.tfvars
+*.tfvars.json
+*.tfplan
+*.tfstate.*
 
 # Terraform plan files (optional directory)
 plans-terraform/
@@ -37,3 +42,17 @@ __pycache__/
 
 # Docker
 *.env
+
+# Environment configuration
+.env
+.env.*
+!.env.example
+
+# Credentials and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Terraform crash files
+crash.*.log
